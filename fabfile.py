@@ -18,18 +18,17 @@ def clone():
     local("git clone https://github.com/sprashan069/Angular-5.git")
 
 def test():
-    local("./manage.py test uploadapp")
+    local("./manage.py test demo")
 
 def commit():
     local("git add -A")
-    # local("git commit")
     local('git commit -a -m  "first commit" ', capture=False)
-    local("git remote add origin https://github.com/sprashan069/Fabric_test.git ")
+    local("git remote add origin https://github.com/sprashan069/demo.git")
 
 def push():
     local("git push -u origin master")
 
 def prepare_deploy():
-    # test()
+    test()
     commit()
     push()
